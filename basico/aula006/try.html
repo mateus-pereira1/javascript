@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="text" id="input" value="Valor do Input">
+
+    <script>
+
+        function getInputValue(id){
+            const dom = document.querySelector("#"+id);
+            if(!dom){
+                throw Error("O id passado não existe")
+            }
+            return dom.value 
+        }
+
+        
+        try{
+            //Trecho de código com potencial para falhar
+            const val = getInputValue("input")
+            alert(val);
+        } catch(err){
+            //O que roda caso tente errar
+            alert("Deu erro: "+err.message)
+        }
+    </script>
+</body>
+</html>
